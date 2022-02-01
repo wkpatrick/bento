@@ -82,6 +82,7 @@ defmodule Bento.Metainfo do
     |> Map.to_list()
     |> Enum.filter(fn {k, _v} -> !String.contains?(k, ".utf-8") end)
     |> Enum.filter(fn {k, _v} -> !String.contains?(k, "file-duration") end)
+    |> Enum.filter(fn {k, _v} -> !String.contains?(k, "file-media") end)
     |> Enum.map(fn {k, v} -> {String.to_existing_atom(k), v} end)
   end
 end
